@@ -1,0 +1,143 @@
+# the PAGE object for the kiruna_sleddog_tours website
+
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        format = html
+        file = EXT:kiruna_sleddog_tours/Resources/Private/Templates/MainContent.html
+        layoutRootPaths {
+            10 = EXT:kiruna_sleddog_tours/Resources/Private/Layouts/
+        }
+        partialRootPaths {
+            10 = EXT:kiruna_sleddog_tours/Resources/Private/Partials/
+        }
+
+        variables {
+            # content
+            content_main < styles.content.get
+
+            # teaser content for homepage
+            content_teaser < styles.content.get
+            content_teaser.select.where = colPos=1
+
+            # carousel content for homepage
+            content_carousel < styles.content.get
+            content_carousel.select.where = colPos=2
+
+            # tour
+            content_tour < styles.content.get
+            content_tour.select.where = colPos=3
+        }
+    }
+
+    # render frontend templates depending on backend layout setting
+    10.file.stdWrap.cObject = CASE
+    10.file.stdWrap.cObject {
+        key.data = levelfield:-1, backend_layout_next_level, slide
+        key.override.field = backend_layout
+
+        default = TEXT
+        default.value = EXT:kiruna_sleddog_tours/Resources/Private/Templates/MainContent.html
+
+        2 = TEXT
+        2.value = EXT:kiruna_sleddog_tours/Resources/Private/Templates/HomepageContent.html
+
+        3 = TEXT
+        3.value = EXT:kiruna_sleddog_tours/Resources/Private/Templates/TourContent.html
+
+        4 = TEXT
+        4.value = EXT:kiruna_sleddog_tours/Resources/Private/Templates/TwoColumnContent.html
+    }
+
+    headerData {
+        10 = TEXT
+        10.value = <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        20 = TEXT
+        20.value (
+                    <!--[if lt IE 9]>
+	                    <script src="js/html5shiv.min.js"></script>
+	                    <script src="js/respond.min.js"></script>
+	                <![endif]-->
+
+	                <script>
+		                // Picture element HTML5 shiv
+		                document.createElement("picture");
+	                </script>
+        )
+
+        30 = TEXT
+        30.value (
+                    <link rel="shortcut icon" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/favicon.ico}" type="image/x-icon"/>
+                    <link rel="apple-touch-icon" sizes="57x57" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-57x57.png}">
+                    <link rel="apple-touch-icon" sizes="60x60" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-60x60.png}">
+                    <link rel="apple-touch-icon" sizes="72x72" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-72x72.png}">
+                    <link rel="apple-touch-icon" sizes="76x76" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-76x76.png}">
+                    <link rel="apple-touch-icon" sizes="114x114" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-114x114.png}">
+                    <link rel="apple-touch-icon" sizes="120x120" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-120x120.png}">
+                    <link rel="apple-touch-icon" sizes="144x144" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-144x144.png}">
+                    <link rel="apple-touch-icon" sizes="152x152" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-152x152.png}">
+                    <link rel="apple-touch-icon" sizes="180x180" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/apple-touch-icon-180x180.png}">
+                    <link rel="icon" type="image/png" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/favicon-16x16.png}" sizes="16x16">
+                    <link rel="icon" type="image/png" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/favicon-32x32.png}" sizes="32x32">
+                    <link rel="icon" type="image/png" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/favicon-96x96.png}" sizes="96x96">
+                    <link rel="icon" type="image/png" href="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/android-chrome-192x192.png}" sizes="192x192">
+                    <meta name="msapplication-square70x70logo" content="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/smalltile.png}"/>
+                    <meta name="msapplication-square150x150logo" content="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/mediumtile.png}"/>
+                    <meta name="msapplication-wide310x150logo" content="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/widetile.png}"/>
+                    <meta name="msapplication-square310x310logo" content="{path:EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/largetile.png}"/>
+        )
+        30.insertData = 1
+    }
+
+
+    # css in header
+    includeCSS {
+        file1 = EXT:kiruna_sleddog_tours/Resources/Public/css/bootstrap.min.css
+        file2 = EXT:kiruna_sleddog_tours/Resources/Public/css/font-awesome.min.css
+        file3 = //fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext
+        file3.external = 1
+    }
+
+    # js in header
+    includeJS {
+        file1 = EXT:kiruna_sleddog_tours/Resources/Public/js/picturefill.min.js
+    }
+
+    # js in footer
+    includeJSFooter {
+        js1 = EXT:kiruna_sleddog_tours/Resources/Public/js/jquery-2.1.4.min.js
+        js2 = EXT:kiruna_sleddog_tours/Resources/Public/js/bootstrap.min.js
+        js3 = EXT:kiruna_sleddog_tours/Resources/Public/js/scripts.js
+    }
+
+    # favicon
+    shortcutIcon = {$kiruna_sleddog_tours.shortcutIcon}
+
+    # metatags
+    meta.author = {$kiruna_sleddog_tours.meta.author}
+    meta.robots = {$kiruna_sleddog_tours.meta.robots}
+
+    meta {
+        language = en
+        keywords.field = keywords_en
+        keywords.ifEmpty (
+            {$kiruna_sleddog_tours.meta.keywords_en}
+        )
+        description.field = description
+        description.ifEmpty (
+            {$kiruna_sleddog_tours.meta.description_en}
+        )
+    }
+}
+
+# meta tags german
+[globalVar = GP:L=1]
+    page.meta {
+        keywords = {$kiruna_sleddog_tours.meta.keywords_de}
+        description = {$kiruna_sleddog_tours.meta.description_de}
+    }
+[global]

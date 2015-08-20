@@ -1,0 +1,24 @@
+<f:layout name="Homepage"/>
+<f:section name="content">
+	<div id="slider" class="carousel fade" data-ride="carousel" data-interval="4000">
+		<div class="carousel-inner">
+			<f:format.raw>{content_carousel}</f:format.raw>
+		</div>
+	</div>
+	<div id="content">
+		<div class="row row-pattern-dark">
+			<div class="container text-center">
+				<f:cObject typoscriptObjectPath="lib.page_header"/>
+			</div>
+		</div>
+		<div class="row row-pattern-dark">
+			<div class="container">
+				<f:format.raw>{content_teaser}</f:format.raw>
+			</div>
+		</div>
+
+		<div class="row row-pattern">
+			<f:format.raw>{content_main}</f:format.raw>
+		</div>
+	</div>
+</f:section>

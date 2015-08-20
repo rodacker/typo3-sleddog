@@ -1,0 +1,37 @@
+<header>
+	<div class="container">
+		<div class="navbar-brand">
+			<f:cObject typoscriptObjectPath="lib.logo"/>
+		</div>
+	</div>
+	<div class="navigation">
+		<div class="container">
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="navbar-header">
+					<a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<i class="fa fa-list-ul"></i>
+					</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<div class="favicon hidden-xs"><a href="">
+								<f:cObject typoscriptObjectPath="lib.favicon"/></a>
+							</div>
+						</li>
+						<f:cObject typoscriptObjectPath="lib.main_menu"/>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<f:render section="content"/>
+<footer>
+	<div class="container">
+		<f:cObject typoscriptObjectPath="lib.footer_menu"/>
+		<ul class="nav nav-pills pull-right">
+			<li><a class="scroll-top" href="#" title="Scroll to top"><i class="fa fa-angle-double-up fa-2x"></i></a></li>
+		</ul>
+	</div>
+</footer>

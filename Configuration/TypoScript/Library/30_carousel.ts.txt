@@ -1,0 +1,48 @@
+lib.carousel = COA
+lib.carousel {
+    1 = FILES
+    1 {
+        collections = {$kiruna_sleddog_tours.homepageCarouselFilesCollectionId}
+
+        renderObj = COA
+        renderObj {
+
+            1 = IMAGE
+            1 {
+                file.import.data = file:current:publicUrl
+                stdWrap.wrap = <div class="item active">|</div>|*|<div class="item">|</div>
+
+                layoutKey = picture
+                layout {
+                    picture {
+                        element = <picture>###SOURCECOLLECTION###<img src="###SRC###" ###PARAMS### ###ALTPARAMS### ###SELFCLOSINGTAGSLASH###></picture>
+                        source = <source src="###SRC###" media="###MEDIAQUERY###" ###SELFCLOSINGTAGSLASH###>
+                    }
+                }
+
+                sourceCollection {
+                    small {
+                        width = 768
+                        srcsetCandidate = 768w
+                        dataKey = small
+                    }
+
+                    medium {
+                        width = 1200
+                        srcsetCandidate = 1200w
+                        mediaQuery = (min-width: 768px)
+                        dataKey = medium
+                    }
+
+                    large {
+                        width = 1500
+
+                        srcsetCandidate = 600w
+                        mediaQuery = (min-width: 1200px)
+                        dataKey = large
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:47:18Z" product-name="kiruna_sleddog_tours">
+		<header/>
+		<body>
+			<trans-unit id="teaser.title" xml:space="preserve">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="teaser.image" xml:space="preserve">
+				<source>Teaser image</source>
+			</trans-unit>
+			<trans-unit id="teaser.subheader" xml:space="preserve">
+				<source>Teaser text</source>
+			</trans-unit>
+            <trans-unit id="teaser.header_link" xml:space="preserve">
+				<source>Link to page</source>
+			</trans-unit>
+			<trans-unit id="overlay.title" xml:space="preserve">
+				<source>Overlay</source>
+			</trans-unit>
+			<trans-unit id="overlay.image" xml:space="preserve">
+				<source>Overlay image</source>
+			</trans-unit>
+			<trans-unit id="overlay.subheader" xml:space="preserve">
+				<source>Year</source>
+			</trans-unit>
+            <trans-unit id="overlay.bodytext" xml:space="preserve">
+				<source>Link to page</source>
+			</trans-unit>
+			<trans-unit id="carousel.title" xml:space="preserve">
+				<source>Carousel</source>
+			</trans-unit>
+			<trans-unit id="carousel.image" xml:space="preserve">
+				<source>Carousel images</source>
+			</trans-unit>
+			<trans-unit id="wizard.extra" xml:space="preserve">
+				<source>Extra</source>
+			</trans-unit>
+			<trans-unit id="wizard.teaser_title" xml:space="preserve">
+				<source>Homepage teaser</source>
+			</trans-unit>
+			<trans-unit id="wizard.teaser_description" xml:space="preserve">
+				<source>Teaser to a subpage with an image, a header, text and a link</source>
+			</trans-unit>
+			<trans-unit id="wizard.overlay_title" xml:space="preserve">
+				<source>Overlay</source>
+			</trans-unit>
+			<trans-unit id="wizard.overlay_description" xml:space="preserve">
+				<source>Overlay element showing info over image on mouseover</source>
+			</trans-unit>
+			<trans-unit id="wizard.carousel_title" xml:space="preserve">
+				<source>Homepage carousel</source>
+			</trans-unit>
+			<trans-unit id="wizard.carousel_description" xml:space="preserve">
+				<source>Adds an images slider (caroursel) to the homepage</source>
+			</trans-unit>
+			<trans-unit id="tour_page_type" xml:space="preserve">
+				<source>Tour</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_tour_teaser" xml:space="preserve">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_tour_details" xml:space="preserve">
+				<source>Details</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_tour_price" xml:space="preserve">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="pages.tabs.tours" xml:space="preserve">
+				<source>Tour</source>
+			</trans-unit>
+			<trans-unit id="pages.palettes.tour" xml:space="preserve">
+				<source>Tour data</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

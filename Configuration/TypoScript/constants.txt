@@ -1,0 +1,43 @@
+kiruna_sleddog_tours {
+
+    # cat=kiruna_sleddog_tours//0010; type=string; label= baseURL: set url to the domain of the website
+    baseURL = http://sleddog.cms/
+
+    # cat=kiruna_sleddog_tours//0011; type=string; label= CSS: set the relative path to the main css file
+    includeCSS.file4 = FILE:EXT:kiruna_sleddog_tours/Resources/Public/Css/site.css
+
+    # cat=kiruna_sleddog_tours//0012; type=string; label= Favicon: set the relative path to the favicon file
+    shortcutIcon = FILE:EXT:kiruna_sleddog_tours/Resources/Public/Images/favicon.ico
+
+    # cat=kiruna_sleddog_tours//0050; type=int+; label= Homepage Id: id of the files collection containing the images for the carousel
+    homepageId = 2
+
+    # cat=kiruna_sleddog_tours//0051; type=int+; label= Carousel Files Collectio Id: id of the files collection containing the images for the carousel
+    homepageCarouselFilesCollectionId = 1
+
+    # meta tags english
+    meta {
+        language = en
+
+        # cat=kiruna_sleddog_tours//0030; type=string; label= meta.author: author meta tag
+        author = Author
+
+        # cat=kiruna_sleddog_tours//0031; type=string; label= meta.robots: robots meta tag
+        robots = index,follow
+
+        # cat=kiruna_sleddog_tours//0032; type=string; label= meta.keywords (en): english fallback keywords
+        keywords_en = Keywords Fallback English
+
+        # cat=kiruna_sleddog_tours//0033; type=string; label= meta.keywords (de): german fallback keywords
+        keywords_de = Keywords Fallback German
+
+        # cat=kiruna_sleddog_tours//0034; type=string; label= meta.description (en): english fallback description
+        description_en = Description Fallback English
+
+        # cat=kiruna_sleddog_tours//0034; type=string; label= meta.description (de): german fallback description
+        description_de = Description Fallback German
+    }
+}
+
+# set default header type
+content.defaultHeaderType = 1

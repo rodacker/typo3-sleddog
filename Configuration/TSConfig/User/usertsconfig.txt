@@ -1,0 +1,28 @@
+options {
+    enableShowPalettes = 0
+    clipboardNumberPads = 1
+    pageTree.showNavTitle = 1
+    pageTree.showPageIdWithTitle = 1
+    alertPopups = 4
+    clearCache.pages = 1
+    clearCache.all = 1
+
+
+}
+
+# TCAdefaults for teaser element
+[PIDinRootline = 2] && [globalVar = GP:defVals|tt_content|colPos=1]
+TCAdefaults.tt_content {
+    CType = teaser
+    colPos = 1
+}
+[global]
+
+# TCAdefaults for carousel element
+[page | backend_layout = 2] && [globalVar = GP:defVals|tt_content|colPos=2]
+TCAdefaults.tt_content {
+    CType = carousel
+    colPos = 2
+    header = Carousel
+}
+[global]

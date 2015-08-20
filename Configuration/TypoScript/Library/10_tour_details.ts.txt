@@ -1,0 +1,66 @@
+lib.tour {
+
+    # tour image
+    image = FILES
+    image {
+        references {
+            table = pages
+            uid.data = page:uid
+            fieldName = media
+        }
+
+        maxItems = 1
+
+        renderObj = COA
+        renderObj {
+            1 = IMAGE
+            1 {
+                file.import.data = file:current:publicUrl
+                params = class="img-responsive"
+
+                layoutKey = picture
+                layout {
+                    picture {
+                        element = <picture>###SOURCECOLLECTION###<img src="###SRC###" ###PARAMS### ###ALTPARAMS### ###SELFCLOSINGTAGSLASH###></picture>
+                        source = <source src="###SRC###" media="###MEDIAQUERY###" ###SELFCLOSINGTAGSLASH###>
+                    }
+                }
+
+                sourceCollection {
+                    small {
+                        width = 768
+                        srcsetCandidate = 768w
+                        dataKey = small
+                    }
+
+                    medium {
+                        width = 1200
+                        srcsetCandidate = 1200w
+                        mediaQuery = (min-width: 768px)
+                        dataKey = medium
+                    }
+
+                    large {
+                        width = 1500
+
+                        srcsetCandidate = 600w
+                        mediaQuery = (min-width: 1200px)
+                        dataKey = large
+                    }
+                }
+            }
+        }
+    }
+
+    # teaser
+    teaser = TEXT
+    teaser.data = field:tx_kiruna_sleddog_tours_tour_teaser
+
+    # details
+    details = TEXT
+    details.data = field:tx_kiruna_sleddog_tours_tour_details
+
+    # price
+    price = TEXT
+    price.data = field:tx_kiruna_sleddog_tours_tour_price
+}

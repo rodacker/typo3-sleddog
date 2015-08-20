@@ -1,0 +1,99 @@
+
+# CType - teaser
+tt_content.teaser = COA
+tt_content.teaser {
+    10 = FILES
+    10 {
+        references {
+            table = tt_content
+            uid.data = field:uid
+            fieldName = image
+        }
+
+        renderObj = COA
+        renderObj {
+            10 = IMAGE
+            10 {
+                file.import.data = file:current:uid
+                file.treatIdAsReference = 1
+                params = class="img-responsive"
+                stdWrap.wrap = <div class="teaser-image">|</div>
+            }
+        }
+    }
+
+    20 = TEXT
+    20 {
+        data = field:header
+        wrap = <div class="teaser-body"><h2>|</h2>
+    }
+
+    30 = TEXT
+    30 {
+        data = field:subheader
+        wrap = <p>|</p></div>
+    }
+
+    40 = TEXT
+    40 {
+        value = Read more
+        stdWrap.typolink.parameter.field = header_link
+        stdWrap.typolink.ATagParams = class="btn btn-primary"
+        wrap = <div class="teaser-footer"><p>|</p></div>
+    }
+
+    stdWrap.wrap = <div class="col-sm-6 col-md-4 text-center"><div class="teaser">|</div></div>
+}
+
+# CType - carousel
+tt_content.carousel = COA
+tt_content.carousel {
+    10 = FILES
+    10 {
+        references {
+            table = tt_content
+            uid.data = field:uid
+            fieldName = image
+        }
+
+        renderObj = COA
+        renderObj {
+            1 = IMAGE
+            1 {
+                file.import.data = file:current:publicUrl
+                stdWrap.wrap = <div class="item active">|</div>|*|<div class="item">|</div>
+
+                layoutKey = picture
+                layout {
+                    picture {
+                        element = <picture>###SOURCECOLLECTION###<img src="###SRC###" ###PARAMS### ###ALTPARAMS### ###SELFCLOSINGTAGSLASH###></picture>
+                        source = <source src="###SRC###" media="###MEDIAQUERY###" ###SELFCLOSINGTAGSLASH###>
+                    }
+                }
+
+                sourceCollection {
+                    small {
+                        width = 768
+                        srcsetCandidate = 768w
+                        dataKey = small
+                    }
+
+                    medium {
+                        width = 1200
+                        srcsetCandidate = 1200w
+                        mediaQuery = (min-width: 768px)
+                        dataKey = medium
+                    }
+
+                    large {
+                        width = 1500
+
+                        srcsetCandidate = 600w
+                        mediaQuery = (min-width: 1200px)
+                        dataKey = large
+                    }
+                }
+            }
+        }
+    }
+}

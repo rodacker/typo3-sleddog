@@ -1,0 +1,30 @@
+<f:layout name="Tour"/>
+<f:section name="content">
+	<div class="col-sm-6">
+		<f:if condition="{tour.image}">
+			{tour.image}
+		</f:if>
+		{tour}
+		<f:cObject typoscriptObjectPath="lib.tour.image"/>
+		<div class="tour-facts pattern-dark">
+			<h2>Tour Details</h2>
+			<f:cObject typoscriptObjectPath="lib.tour.details"/>
+			<div class="booking">
+				<h3>
+					<span class="hidden">Price: </span>
+					<strong><f:cObject typoscriptObjectPath="lib.tour.price"/></strong>
+				</h3>
+				<f:if condition="{link}">
+					<a class="btn btn-primary" href="{link}">Book Tour now</a>
+				</f:if>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="box-white">
+			<h2>Program</h2>
+			<f:format.raw>{content_tour}</f:format.raw>
+		</div>
+	</div>
+
+</f:section>

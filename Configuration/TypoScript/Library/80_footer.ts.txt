@@ -1,0 +1,10 @@
+# get footer content from a special directory (page)
+lib.footer_content = CONTENT
+lib.footer_content {
+    table = tt_content
+    select {
+        pidInList = {$kiruna_sleddog_tours.footerContentPid}
+        #where = pid_language_ouid=yourContentElementID
+        languageField = sys_language_uid
+    }
+}

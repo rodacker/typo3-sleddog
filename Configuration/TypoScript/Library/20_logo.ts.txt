@@ -1,0 +1,13 @@
+# logo
+lib.logo = IMAGE
+lib.logo {
+    file = EXT:kiruna_sleddog_tours/Resources/Public/img/kiruna_sleddog_tours_logo.png
+    layoutKey = default
+    layout {
+        default {
+            element = <img src="###SRC###" ###PARAMS### ###ALTPARAMS### />
+            source =
+        }
+    }
+    stdWrap.typolink.parameter = {$kiruna_sleddog_tours.homepageId}
+}

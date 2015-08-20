@@ -1,0 +1,15 @@
+lib.page_header = COA
+lib.page_header {
+
+    10 = TEXT
+    10 {
+        data = field:title
+        wrap = <h1>|</h1>
+    }
+
+    20 = TEXT
+    20 {
+        data = field:subtitle
+        wrap = <p class="lead">|</p>
+    }
+}

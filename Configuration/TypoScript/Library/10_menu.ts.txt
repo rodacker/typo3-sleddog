@@ -1,0 +1,81 @@
+# main menu
+lib.main_menu = HMENU
+lib.main_menu {
+
+    excludeUidList = 21
+    1 = TMENU
+    1 {
+        expAll = 1
+        noBlur = 1
+        NO = 1
+        NO.allWrap = <li>|</li>
+        NO.stdWrap.htmlSpecialChars = 1
+
+        CUR = 1
+        CUR {
+            allWrap = <li class="active">|</li>
+        }
+
+        ACT = 1
+        ACT < .CUR
+
+        IFSUB = 1
+        IFSUB {
+            wrapItemAndSub = <li class="dropdown">|</li>
+            ATagParams = class="dropdown-toggle" data-toggle="dropdown"
+        }
+
+
+        CURIFSUB = 1
+        CURIFSUB < .IFSUB
+        CURIFSUB.wrapItemAndSub = <li class="dropdown active">|<li>
+
+        ACTIFSUB = 1
+        ACTIFSUB < .CURIFSUB
+    }
+
+    2 = TMENU
+    2 {
+        wrap = <ul class="dropdown-menu">|</ul>
+        noBlur = 1
+
+        NO = 1
+        NO.allWrap = <li>|</li>
+        NO.stdWrap.htmlSpecialChars = 1
+
+        ACT = 1
+        ACT < .NO
+        ACT.allWrap = <li class="active">|</li>
+
+        CURIFSUB < .ACT
+        ACTIFSUB < .CURIFSUB
+    }
+}
+
+# footer menu
+lib.footer_menu = HMENU
+lib.footer_menu {
+
+    wrap = <ul class="nav nav-pills pull-left">|</ul>
+    special = list
+    special.value = 21,8
+
+    1 = TMENU
+    1 {
+        noBlur = 1
+        NO = 1
+        NO.allWrap = <li>|</li>
+
+        ACT <.NO
+        ACT.linkWrap = <li class="active">|</li>
+        USERDEF1 < .NO
+        USERDEF2 < .ACT
+    }
+}
+
+
+# tour overview - list of subpages of doktype = 222
+lib.tour_menu = COA
+lib.tour_menu {
+
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:47:18Z" product-name="kiruna_sleddog_tours">
+		<header/>
+		<body>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour" xml:space="preserve">
+				<source>Tour</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.subtitle" xml:space="preserve">
+				<source>Subtitle (detail view)</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.teaser" xml:space="preserve">
+				<source>Teaser text</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.image" xml:space="preserve">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.facts" xml:space="preserve">
+				<source>Facts (detail view)</source>
+			</trans-unit>
+			<trans-unit id="tx_kiruna_sleddog_tours_domain_model_tour.program" xml:space="preserve">
+				<source>Program (detail view)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

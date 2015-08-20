@@ -1,0 +1,285 @@
+# override css styled content markup for better output
+
+# remove default css styles
+# plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+# Content header:
+lib.stdheader {
+    # header wraps
+    10.1.dataWrap = <h1 class="title">|</h1>
+    10.2.dataWrap = <h2 class="title">|</h2>
+    10.3.dataWrap = <h3 class="title">|</h3>
+    10.4.dataWrap = <h4 class="title">|</h4>
+    10.5.dataWrap = <h5 class="title">|</h5>
+
+    # remove divs around header
+    stdWrap.dataWrap = |
+}
+
+# remove divs (tt_content.section_frame) around content elements
+tt_content.stdWrap.innerWrap.cObject.default >
+
+# set markup for ruler after
+tt_content.stdWrap.innerWrap.cObject.6 >
+tt_content.stdWrap.innerWrap.cObject.6 = TEXT
+tt_content.stdWrap.innerWrap.cObject.6.value = |<hr>
+
+# menu of pages
+tt_content.menu.20.default {
+    stdWrap.outerWrap = <div class="well" style="padding: 8px 0;"><ul class="nav nav-list">|</ul></div>
+
+    1.NO.stdWrap.innerWrap = <i class="icon-arrow-right"></i>&nbsp;|
+
+    1.ACT = 1
+    1.ACT.wrapItemAndSub = <li><i class="icon-ok"></i> <strong>|</strong></li>
+    1.ACT.doNotLinkIt = 1
+
+    1.CUR < .1.ACT
+}
+
+# menu of subpages
+tt_content.menu.20.1 {
+    stdWrap.outerWrap = <div class="well" style="padding: 8px 0;"><ul class="nav nav-list">|</ul></div>
+
+    1.NO.stdWrap.innerWrap = <i class="icon-arrow-right"></i>&nbsp;|
+
+    1.ACT = 1
+    1.ACT.wrapItemAndSub = <li><i class="icon-ok"></i> <strong>|</strong></li>
+    1.ACT.doNotLinkIt = 1
+
+    1.CUR < .1.ACT
+}
+
+# menu of subpages - tour overview based on menu of subpages with abstract
+tt_content.menu.20.111 = HMENU
+tt_content.menu.20.111 {
+    special = directory
+    special.value.field = pages
+
+    1 = TMENU
+    1.NO {
+        wrapItemAndSub = <div class="col-md-6 col-lg-4"><div class="tour-teaser">|</div></div>
+
+        before.cObject = COA
+        before.cObject {
+            # image - responsive
+            10 = FILES
+            10 {
+                references {
+                    table = pages
+                    uid.data = field:uid
+                    fieldName = media
+                }
+
+                maxItems = 1
+
+                renderObj = COA
+                renderObj {
+                    1 = IMAGE
+                    1 {
+                        stdWrap.wrap = <div class="tour-teaser-image">|</div>
+
+                        file.import.data = file:current:publicUrl
+                        params = class="img-responsive"
+
+                        layoutKey = picture
+                        layout {
+                            picture {
+                                element = <picture>###SOURCECOLLECTION###<img src="###SRC###" ###PARAMS### ###ALTPARAMS### ###SELFCLOSINGTAGSLASH###></picture>
+                                source = <source src="###SRC###" media="###MEDIAQUERY###" ###SELFCLOSINGTAGSLASH###>
+                            }
+                        }
+
+                        sourceCollection {
+                            small {
+                                width = 768
+                                srcsetCandidate = 768w
+                                dataKey = small
+                            }
+
+                            medium {
+                                width = 1200
+                                srcsetCandidate = 1200w
+                                mediaQuery = (min-width: 768px)
+                                dataKey = medium
+                            }
+
+                            large {
+                                width = 1500
+
+                                srcsetCandidate = 600w
+                                mediaQuery = (min-width: 1200px)
+                                dataKey = large
+                            }
+                        }
+                    }
+                }
+            }
+
+            # title
+            20 = TEXT
+            20.data = field:title
+            20.wrap = <div class="tour-teaser-info"><h3><a href="#">|</a></h3>
+
+            # price
+            30 = TEXT
+            30.data = field: tx_kiruna_sleddog_tours_tour_price
+            30.wrap = <div class="tour-teaser-price">|</div><div class="tour-teaser-enlarge"><i class="fa fa-arrows-alt"></i></div></div>
+
+            # teaser
+            40 = TEXT
+            40.data = field:title
+            40.wrap = <div class="tour-teaser-overlay"><strong>|</strong>
+
+            50 = TEXT
+            50.data = field:tx_kiruna_sleddog_tours_tour_teaser
+        }
+
+        # link
+        linkWrap = <div class="tour-teaser-footer">|</div></div>
+        stdWrap.cObject = TEXT
+        stdWrap.cObject.value = Read more
+        ATagParams = class="btn btn-primary"
+    }
+}
+
+# file links (tt_content.uploads)
+tt_content.uploads {
+    # global wrap including header
+    stdWrap.wrap = <div class="widget">|</div>
+
+    # wrap around list
+    20.stdWrap.dataWrap = <ul class="links">|</ul>
+
+    # remove span wraps
+    20.renderObj.20.wrap = |
+    20.renderObj.wrap >
+    20.renderObj.wrap = <li>|</li>
+}
+
+# set markup for image and textpic
+tt_content.image.20 {
+    1.params = class="img-responsive"
+    1.wrap = <div class="responsive-image">|</div>
+    1.sourceCollection >
+    1.sourceCollection {
+        small {
+            width = 768
+            srcsetCandidate = 768w
+            dataKey = small
+        }
+
+        medium {
+            width = 1200
+            srcsetCandidate = 1200w
+            mediaQuery = (min-width: 768px)
+            dataKey = medium
+        }
+
+        large {
+            width = 1500
+
+            srcsetCandidate = 600w
+            mediaQuery = (min-width: 1200px)
+            dataKey = large
+        }
+    }
+
+    rendering {
+        #singleNoCaption >
+    }
+}
+
+# overlay rendering definitions
+tt_content.overlay = COA
+tt_content.overlay {
+    wrap = <div class="col-lg-4 col-md-6 rodacker-sleddogse-overlayteaser"><div class="tour-teaser">|</div></div>
+
+    10 = FILES
+    10 {
+        references {
+            table = tt_content
+            uid.data = field:uid
+            fieldName = image
+        }
+
+        maxItems = 1
+
+        renderObj = COA
+        renderObj {
+            1 = IMAGE
+            1 {
+                stdWrap.wrap = <div class="tour-teaser-image">|</div>
+
+                file.import.data = file:current:publicUrl
+                params = class="img-responsive"
+
+                layoutKey = picture
+                layout {
+                    picture {
+                        element = <picture>###SOURCECOLLECTION###<img src="###SRC###" ###PARAMS### ###ALTPARAMS### ###SELFCLOSINGTAGSLASH###></picture>
+                        source = <source src="###SRC###" media="###MEDIAQUERY###" ###SELFCLOSINGTAGSLASH###>
+                    }
+                }
+
+                sourceCollection {
+                    small {
+                        width = 768
+                        srcsetCandidate = 768w
+                        dataKey = small
+                    }
+
+                    medium {
+                        width = 1200
+                        srcsetCandidate = 1200w
+                        mediaQuery = (min-width: 768px)
+                        dataKey = medium
+                    }
+
+                    large {
+                        width = 1500
+
+                        srcsetCandidate = 600w
+                        mediaQuery = (min-width: 1200px)
+                        dataKey = large
+                    }
+                }
+            }
+        }
+    }
+
+    # title
+    20 = TEXT
+    20 {
+        wrap = <div class="tour-teaser-info"><h3><a href="#">|</a></h3>
+        data = field:header
+    }
+
+    # year
+    30 = TEXT
+    30 {
+        stdWrap.if.isTrue.field = subheader
+        stdWrap.wrap = <div class="tour-teaser-price">|</div>
+        wrap = |
+        data = field:subheader
+    }
+
+    # close markup
+    35 = TEXT
+    35.value = <div class="tour-teaser-enlarge"><i class="fa fa-arrows-alt"></i></div></div>
+
+    # overlay
+    40 = TEXT
+    40 {
+        wrap = <div class="tour-teaser-overlay"><strong>|</strong><br><br>
+        data = field:header
+    }
+
+    50 = TEXT
+    50 {
+        wrap = |</div>
+        data = field:bodytext
+    }
+
+
+}

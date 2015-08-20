@@ -1,0 +1,61 @@
+plugin.tx_powermail {
+    view {
+        templateRootPath >
+        templateRootPaths {
+            10 = EXT:powermail/Resources/Private/Templates/
+            20 = fileadmin/templates/ext/powermail/Templates/
+        }
+
+        partialRootPath >
+        partialRootPaths {
+            10 = EXT:powermail/Resources/Private/Partials/
+            20 = fileadmin/templates/ext/powermail/Partials/
+        }
+    }
+
+    settings {
+        validation {
+            native = 0
+            server = 1
+            client = 0
+        }
+    }
+}
+
+plugin.tx_news {
+    settings {
+        displayDummyIfNoMedia = 0
+
+        list {
+            # media configuration
+            media {
+                image {
+                    maxWidth >
+                    maxHeight >
+                }
+
+                dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
+            }
+        }
+
+        detail {
+            showSocialShareButtons = 0
+            disqusShortname =
+
+            # media configuration
+            media {
+                image {
+                    params = class="img-responsive"
+                    maxWidth =
+                    maxHeight =
+
+                }
+
+                video {
+                    width >
+                    height >
+                }
+            }
+        }
+    }
+}

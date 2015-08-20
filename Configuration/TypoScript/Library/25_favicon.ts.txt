@@ -1,0 +1,6 @@
+# logo
+lib.favicon = IMAGE
+lib.favicon {
+    file = EXT:kiruna_sleddog_tours/Resources/Public/img/favicon/favicon-32x32.png
+    stdWrap.typolink.parameter = {$kiruna_sleddog_tours.baseURL}
+}
