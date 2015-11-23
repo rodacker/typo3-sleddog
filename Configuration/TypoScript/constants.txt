@@ -15,6 +15,9 @@ kiruna_sleddog_tours {
     # cat=kiruna_sleddog_tours//0051; type=int+; label= Carousel Files Collectio Id: id of the files collection containing the images for the carousel
     homepageCarouselFilesCollectionId = 1
 
+	# cat=kiruna_sleddog_tours//0052; type=int+; label= Booking page Id: id of the page with the booking form
+	bookingPageId = 38
+
     # meta tags english
     meta {
         language = en

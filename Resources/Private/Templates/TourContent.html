@@ -9,14 +9,15 @@
 		<div class="tour-facts pattern-dark">
 			<h2>Tour Details</h2>
 			<f:cObject typoscriptObjectPath="lib.tour.details"/>
+			<br>
 			<div class="booking">
 				<h3>
 					<span class="hidden">Price: </span>
-					<strong><f:cObject typoscriptObjectPath="lib.tour.price"/></strong>
+					<strong>
+						<f:cObject typoscriptObjectPath="lib.tour.price"/>
+					</strong>
 				</h3>
-				<f:if condition="{link}">
-					<a class="btn btn-primary" href="{link}">Book Tour now</a>
-				</f:if>
+				<f:cObject typoscriptObjectPath="lib.tour.link"/>
 			</div>
 		</div>
 	</div>
