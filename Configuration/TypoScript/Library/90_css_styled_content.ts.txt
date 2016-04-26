@@ -119,17 +119,17 @@ tt_content.menu.20.111 {
             # title
             20 = TEXT
             20.data = field:title
-            20.wrap = <div class="tour-teaser-info"><h3><a href="#">|</a></h3>
+            20.wrap = <div class="tour-teaser-info"><h3><a href="#">|</a></h3></div>
 
-            # price
+            # teaser overlay price
             30 = TEXT
             30.data = field: tx_kiruna_sleddog_tours_tour_price
-            30.wrap = <div class="tour-teaser-price">|</div><div class="tour-teaser-enlarge"><i class="fa fa-arrows-alt"></i></div></div>
+            30.wrap = <div class="tour-teaser-overlay"><div class="tour-teaser-price">|</div>
 
             # teaser
             40 = TEXT
             40.data = field:title
-            40.wrap = <div class="tour-teaser-overlay"><strong>|</strong>
+            40.wrap = <strong>|</strong>
 
             50 = TEXT
             50.data = field:tx_kiruna_sleddog_tours_tour_teaser
