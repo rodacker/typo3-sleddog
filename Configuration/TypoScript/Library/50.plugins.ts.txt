@@ -1,15 +1,15 @@
 plugin.tx_powermail {
     view {
-        templateRootPath >
+        templateRootPaths >
         templateRootPaths {
-            10 = EXT:powermail/Resources/Private/Templates/
-            20 = fileadmin/templates/ext/powermail/Templates/
+            0 = EXT:powermail/Resources/Private/Templates/
+            1 = fileadmin/templates/ext/powermail/Templates/
         }
 
-        partialRootPath >
+        partialRootPaths >
         partialRootPaths {
-            10 = EXT:powermail/Resources/Private/Partials/
-            20 = fileadmin/templates/ext/powermail/Partials/
+            0 = EXT:powermail/Resources/Private/Partials/
+            1 = fileadmin/templates/ext/powermail/Partials/
         }
     }
 

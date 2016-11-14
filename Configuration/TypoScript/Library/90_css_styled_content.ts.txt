@@ -80,6 +80,7 @@ tt_content.menu.20.111 {
                         stdWrap.wrap = <div class="tour-teaser-image">|</div>
 
                         file.import.data = file:current:publicUrl
+                        file.maxW = 1200
                         params = class="img-responsive"
 
                         layoutKey = picture
@@ -94,20 +95,20 @@ tt_content.menu.20.111 {
                             small {
                                 width = 768
                                 srcsetCandidate = 768w
+                                mediaQuery = (max-width: 768px)
                                 dataKey = small
                             }
 
                             medium {
-                                width = 1200
-                                srcsetCandidate = 1200w
-                                mediaQuery = (min-width: 768px)
+                                width = 1024
+                                srcsetCandidate = 1024w
+                                mediaQuery = (min-width: 769px)
                                 dataKey = medium
                             }
 
                             large {
-                                width = 1500
-
-                                srcsetCandidate = 600w
+                                width = 1200
+                                srcsetCandidate = 1200w
                                 mediaQuery = (min-width: 1200px)
                                 dataKey = large
                             }
@@ -212,6 +213,7 @@ tt_content.overlay {
                 stdWrap.wrap = <div class="tour-teaser-image">|</div>
 
                 file.import.data = file:current:publicUrl
+                file.maxW = 1200
                 params = class="img-responsive"
 
                 layoutKey = picture
@@ -266,7 +268,7 @@ tt_content.overlay {
 
     # close markup
     35 = TEXT
-    35.value = <div class="tour-teaser-enlarge"><i class="fa fa-arrows-alt"></i></div></div>
+    35.value = <div class="tour-teaser-enlarge"></div></div>
 
     # overlay
     40 = TEXT
